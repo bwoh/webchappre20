@@ -3,7 +3,7 @@ import express from "express";
 import cool from "cool-ascii-faces";
 
 const app = express();
-//const port = 3000;
+const port = 3000;
 
 const mechanic = [
   { id: 1, name: "건담", model: "RX-78-2" },
@@ -23,6 +23,6 @@ app.get("/cool", function (request, response) {
   response.send(cool());
 });
 
-app.listen(app.get("port"), () => {
-  console.log(`서버 실행 (${port})`);
+app.listen(process.env.PORT || 3000 || port, () => {
+  console.log(`서버 실행 (${process.env.PORT || 3000})`);
 });
