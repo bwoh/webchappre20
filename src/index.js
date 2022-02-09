@@ -17,6 +17,6 @@ app.get("/mechanic", (req, res) => {
   res.json(mechanic);
 });
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`서버 실행 (${port})`);
 });
