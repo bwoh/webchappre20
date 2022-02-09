@@ -65,6 +65,19 @@ app.post("/mechanic/", (req, res) => {
   res.json({ status: "id exists" });
 });
 
+app.get("/mechanic/delete/:id", (req, res) => {
+  const targetIndex = mechanic.findIndex(
+    (unit, index) => unit.id === Number(req.params.id)
+  );
+  console.log(targetIndex);
+
+  if (targetIndex < 0) return res.json({ status: "Not Found" });
+
+  mechanic.splice(targetIndex, 1);
+  //res.json({ status: "deleted" });
+  res.json(mechanic);
+});
+
 app.listen(process.env.PORT || port, () => {
   console.log(`서버 실행 (${port})`);
 });
