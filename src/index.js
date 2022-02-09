@@ -9,6 +9,10 @@ const mechanic = [
   { id: 3, name: "자쿠II", model: "MS-06F" }
 ];
 
+app.get("/", (req, res) => {
+  res.json({ status: "OK" });
+});
+
 app.get("/mechanic", (req, res) => {
   res.json(mechanic);
 });
