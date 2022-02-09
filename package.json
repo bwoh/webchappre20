@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "start": "nodemon src/index.js",
-    "postdeploy": "npm run start"
+    "postdeploy": "npm run build"
   },
   "dependencies": {
     "express": "4.17.2"
