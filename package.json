@@ -9,12 +9,12 @@
       "url": "heroku/nodejs"
     },
     {
-      "url": "https://github.com/bwoh/webchappre20"
+      "url": "https://github.com/heroku/heroku-buildpack-static.git"
     }
   ],
   "scripts": {
     "start": "nodemon src/index.js",
-    "postdeploy": "npm run build"
+    "postdeploy": "npm run start"
   },
   "dependencies": {
     "express": "4.17.2"
