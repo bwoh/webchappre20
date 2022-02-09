@@ -1,7 +1,7 @@
 import express from "express";
 
 const app = express();
-const port = 3000;
+//const port = 3000;
 
 const mechanic = [
   { id: 1, name: "건담", model: "RX-78-2" },
@@ -13,6 +13,6 @@ app.get("/mechanic", (req, res) => {
   res.json(mechanic);
 });
 
-app.listen(process.env.PORT || port, () => {
+app.listen(app.get("port"), () => {
   console.log(`서버 실행 (${port})`);
 });
