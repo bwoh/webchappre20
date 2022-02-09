@@ -1,5 +1,7 @@
 import express from "express";
 
+import cool from "cool-ascii-faces";
+
 const app = express();
 //const port = 3000;
 
@@ -9,8 +11,16 @@ const mechanic = [
   { id: 3, name: "자쿠II", model: "MS-06F" }
 ];
 
+app.get("/", (req, res) => {
+  res.json(mechanic);
+});
+
 app.get("/mechanic", (req, res) => {
   res.json(mechanic);
+});
+
+app.get("/cool", function (request, response) {
+  response.send(cool());
 });
 
 app.listen(app.get("port"), () => {
